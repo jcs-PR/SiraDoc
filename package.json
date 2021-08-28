@@ -1,6 +1,6 @@
 {
   "name": "siradoc",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Static documentation generator for scripting manual",
   "main": "./lib/sira.js",
   "repository": {
@@ -26,6 +26,13 @@
   "preferGlobal": true,
   "dependencies": {
     "directory-tree": "^2.3.1",
-    "node-html-parser": "^4.1.4"
-  }
+    "fs-extra": "^10.0.0",
+    "node-html-parser": "^4.1.4",
+    "replace-ext": "^2.0.0",
+    "showdown": "^1.9.1",
+    "showdown-highlight": "^2.1.8"
+  },
+  "files": [
+    "site"
+  ]
 }
