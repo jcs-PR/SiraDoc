@@ -9,3 +9,6 @@ test
 
 # ignore util
 scripts
+
+# ignore build
+build
