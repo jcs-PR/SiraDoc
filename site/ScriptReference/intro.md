@@ -1,0 +1,3 @@
+# Welcome to the <span class="manual-name"></span> Scripting Reference!
+
+Scripting reference introduction...
