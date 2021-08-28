@@ -1,0 +1,23 @@
+{
+  "name": "scidoc",
+  "version": "1.0.0",
+  "description": "Static documentation generator for scripting manual",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js"
+  },
+  "keywords": [
+    "doc",
+    "documentation",
+    "documents",
+    "generator",
+    "static"
+  ],
+  "author": "Jen-Chieh Shen",
+  "license": "MIT",
+  "preferGlobal": true,
+  "dependencies": {
+    "directory-tree": "^2.3.1"
+  }
+}
