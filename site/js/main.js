@@ -135,7 +135,7 @@
 
     console.log(pathDir);
 
-    let dirLayer = 1;
+    let dirLayer = 0;
 
     let currentPathDir = pathDir[dirLayer];
 
