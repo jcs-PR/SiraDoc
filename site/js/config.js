@@ -44,15 +44,7 @@ const search_content = 'search';  // Search page.
 
 /* Homepage Link */
 const homepage_url  = "https://github.com/jcs090218/SiraDoc";  // Link to your homepage.
-const homepage_text = "api-ref-tem.github";                                   // Text represent your homepage.
-
-
-// Content extension to load.
-//
-// NOTE: have to be the same with 'server' side's config file.
-//
-// SEE : config.js in the project root directory.
-const content_extension = '.md';
+const homepage_text = "SiraDoc.github";                                   // Text represent your homepage.
 
 /* Search Input Text */
 const si_manual_placeholder = "Search manual...";
