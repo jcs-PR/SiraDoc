@@ -1,4 +1,4 @@
-# SiraDoc
+# ᏕiraDoc
 
 Static documentation generator for scripting manual
 
