@@ -8,6 +8,16 @@ Static documentation generator for scripting manual
   <img src="./etc/demo.png"/>
 </p>
 
+## Installing
+
+### NPM
+
+To install SiraDoc using npm, execute the following command:
+
+```
+npm install -g siradoc
+```
+
 ## TODO
 
 - [ ] Add search capability
