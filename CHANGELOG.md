@@ -5,10 +5,10 @@ All notable changes to this project will be documented in this file.
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
 
-## 0.1.2 (Unreleased)
+## 0.2.0 (Unreleased)
 > Released N/A
 
-* N/A
+* Fix CROS issue
 
 ## 0.1.1
 > Released Aug 29, 2021
