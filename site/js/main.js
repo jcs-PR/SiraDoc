@@ -296,7 +296,7 @@
   function loadContent() {
     let url = window.location.href;
     let type = basePath(window.location.pathname);
-    let base = window.location.origin + type;
+    let base = '..' + type;
     let docBase = '';
 
     if (type === '/Manual') {
