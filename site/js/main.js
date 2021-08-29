@@ -133,10 +133,7 @@
     if (currentContentPage !== null)
       pathDir = currentContentPage.split(slashKey);
 
-    console.log(pathDir);
-
     let dirLayer = 0;
-
     let currentPathDir = pathDir[dirLayer];
 
     // Initialize by URL param.
@@ -145,9 +142,6 @@
       let arrow = $(this).find('.arrow');
 
       let path = $(this).attr('id');
-
-      console.log(currentPathDir);
-      console.log(path);
 
       if (currentPathDir == path) {
         openSBDir(items, arrow);
@@ -163,7 +157,6 @@
       }
     });
   }
-  addSBDirButtonEvent();  // Do it once at initialize time.
 
   function addSBFileButtonEvent() {
     let sbFile = $('.sb-file');
@@ -208,7 +201,6 @@
       }
     });
   }
-  addSBFileButtonEvent();  // Do it once at initialize time.
 
   /**
    * Add a parameter to current URL.
