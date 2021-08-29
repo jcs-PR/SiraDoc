@@ -7,6 +7,8 @@ Static documentation generator for scripting manual
 
 ## Demo
 
+Looking for a demo? A simple demo is available at https://Sira.github.io/demo/!
+
 <p align="center">
   <img src="./etc/demo.png"/>
 </p>
