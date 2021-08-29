@@ -18,10 +18,10 @@ Static documentation generator for scripting manual
 To install SiraDoc using npm, execute the following command:
 
 ```
-npm install -g siradoc
+npm install -g @siradoc/siradoc
 ```
 
-[![NPM](https://nodei.co/npm/siradoc.png)](https://nodei.co/npm/siradoc/)
+[![NPM](https://nodei.co/npm/@siradoc/siradoc.png)](https://www.npmjs.com/package/@siradoc/siradoc)
 
 ## TODO
 
