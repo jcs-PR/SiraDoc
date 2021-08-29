@@ -1,6 +1,6 @@
 {
   "name": "@siradoc/siradoc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Static documentation generator for scripting manual",
   "main": "./lib/sira.js",
   "repository": {
