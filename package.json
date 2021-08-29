@@ -1,11 +1,11 @@
 {
-  "name": "siradoc",
+  "name": "@siradoc/siradoc",
   "version": "0.0.1",
   "description": "Static documentation generator for scripting manual",
   "main": "./lib/sira.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SiraDoc/SiraDoc.git"
+    "url": "git+https://github.com/SiraDoc/SiraDoc.git"
   },
   "bugs": {
     "url": "https://github.com/SiraDoc/SiraDoc/issues"
@@ -35,5 +35,10 @@
   },
   "files": [
     "site"
-  ]
+  ],
+  "homepage": "https://github.com/SiraDoc/SiraDoc#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
 }
