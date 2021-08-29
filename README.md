@@ -2,7 +2,6 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![dependencies Status](https://status.david-dm.org/gh/jcs090218/siradoc.svg)](https://david-dm.org/jcs090218/siradoc)
-[![NPM](https://nodei.co/npm/siradoc.png)](https://nodei.co/npm/siradoc/)
 
 Static documentation generator for scripting manual
 
@@ -21,6 +20,8 @@ To install SiraDoc using npm, execute the following command:
 ```
 npm install -g siradoc
 ```
+
+[![NPM](https://nodei.co/npm/siradoc.png)](https://nodei.co/npm/siradoc/)
 
 ## TODO
 
