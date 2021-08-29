@@ -43,7 +43,7 @@ const intro_content  = 'intro';   // Default content page.
 const search_content = 'search';  // Search page.
 
 /* Homepage Link */
-const homepage_url  = "https://github.com/jcs090218/SiraDoc";  // Link to your homepage.
+const homepage_url  = "https://github.com/SiraDoc/SiraDoc";  // Link to your homepage.
 const homepage_text = "SiraDoc.github";                                   // Text represent your homepage.
 
 /* Search Input Text */

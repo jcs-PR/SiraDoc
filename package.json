@@ -5,10 +5,10 @@
   "main": "./lib/sira.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jcs090218/SiraDoc.git"
+    "url": "https://github.com/SiraDoc/SiraDoc.git"
   },
   "bugs": {
-    "url": "https://github.com/jcs090218/SiraDoc/issues"
+    "url": "https://github.com/SiraDoc/SiraDoc/issues"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
