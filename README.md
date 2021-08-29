@@ -1,9 +1,16 @@
 # SiraDoc
-> Static documentation generator for scripting manual
 
-N/A
+Static documentation generator for scripting manual
+
+## Demo
+
+<p align="center">
+  <img src="./etc/demo.png"/>
+</p>
 
 ## License
+
+This software uses other open-source components. For a full list, see the `LICENSE` file.
 
 ```
 MIT License
