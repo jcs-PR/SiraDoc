@@ -9,6 +9,34 @@
 
 "use strict";
 
+/* Conversion Keywords */
+const slashKey = "_sl_";
+const spaceKey = "_sp_";  // Must be the same as server.
+
+const obKey      = "_ob_";   // open bracket '('.
+const cbKey      = "_cb_";   // close bracket ')'.
+const ocbKey     = "_ocb_";  // open curly bracket '{'.
+const ccbKey     = "_ccb_";  // close curly bracket '}'.
+const osbKey     = "_osb_";  // open square bracket '['.
+const csbKey     = "_csb_";  // close square bracket ']'.
+
+const atKey      = "_at_";   // At key '@'.
+const caretKey   = "_cr_";   // Caret key '^'.
+const bqKey      = "_bq_";   // Back quote key '`'.
+const tildeKey   = "_tl_";   // Tilde key '~'.
+const hashKey    = "_hs_";   // Hash key '#'.
+const dollarKey  = "_dl_";   // Dollar '$' key.
+const percentKey = "_pc_";   // Percent '%' key.
+const andKey     = "_and_";  // And '&' key.
+const plusKey    = "_pl_";   // And '+' key.
+const quoteKey   = "_qt_";   // Quote ' key.
+const exclaimKey = "_ex_";   // Exclamation mark key '!'.
+
+const periodKey    = "_pri_";  // Period '.' key.
+const equalKey     = "_eq_";   // Equals ' =' key.
+const commaKey     = "_cma_";  // Comma ',' key.
+const semicolonKey = "_sc_";   // Semicolon ';' key.
+
 
 /**
  * jQuery entry.
@@ -20,7 +48,6 @@
 
   /* Collect Require Components. */
   var scrollBarTitle = $('#scroll-bar-title');
-  var indexPos = $('#index-pos');
 
   /* Content */
   var content = $('#content');
@@ -132,7 +159,7 @@
 
     let pathDir = [];
 
-    if (currentContentPage != null)
+    if (currentContentPage !== null)
       pathDir = currentContentPage.split(slashKey);
 
     let currentPathDir = pathDir[0];
@@ -233,6 +260,51 @@
     document.location = url;
   }
 
+  function applyConfig() {
+    /* Reload possible changing variables. */
+    let manualName = $('.manual-name');
+    let copyright = $('.copyright');
+    let homepageLink = $('.homepage-link');
+
+    let versionTitle01 = $('.version-title-01');
+    let versionTitle02 = $('.version-title-02');
+    let versionTitle03 = $('.version-title-03');
+    let versionTitle04 = $('.version-title-04');
+    let versionTitle05 = $('.version-title-05');
+    let versionTitle06 = $('.version-title-06');
+    let versionTitle07 = $('.version-title-07');
+
+    let versionNum01 = $('.version-num-01');
+    let versionNum02 = $('.version-num-02');
+    let versionNum03 = $('.version-num-03');
+    let versionNum04 = $('.version-num-04');
+    let versionNum05 = $('.version-num-05');
+    let versionNum06 = $('.version-num-06');
+    let versionNum07 = $('.version-num-07');
+
+    manualName.text(manual_name);
+    copyright.text(copyright_text);
+    homepageLink.text(homepage_text);
+    homepageLink.attr('href', homepage_url);
+
+    versionTitle01.text(version_title_01);
+    versionTitle02.text(version_title_02);
+    versionTitle03.text(version_title_03);
+    versionTitle04.text(version_title_04);
+    versionTitle05.text(version_title_05);
+    versionTitle06.text(version_title_06);
+    versionTitle07.text(version_title_07);
+
+    versionNum01.text(version_num_01);
+    versionNum02.text(version_num_02);
+    versionNum03.text(version_num_03);
+    versionNum04.text(version_num_04);
+    versionNum05.text(version_num_05);
+    versionNum06.text(version_num_06);
+    versionNum07.text(version_num_07);
+  }
+  applyConfig();
+
   /**
    * Apply customizable color.
    */
@@ -252,6 +324,38 @@
     }
   }
   applyTheme();
+
+  function loadContent() {
+    let url = window.location.href;
+    let type = basePath(window.location.pathname);
+    let base = window.location.origin + type;
+    let docBase = '';
+
+    if (type === '/Manual') {
+      document.title = manual_name + ' - Scripting Manual';
+      scrollBarTitle.text(manual_name + " Manul");
+      searchInput.attr('placeholder', si_manual_placeholder);
+      docBase = '/doc';
+    } else {
+      document.title = manual_name + ' - Scripting API';
+      scrollBarTitle.text("Scripting API");
+      searchInput.attr('placeholder', si_api_placeholder);
+      docBase = '/api';
+    }
+
+    let page = getUrlParameter('page');
+    if (page !== null)
+      page = applyConversionRule(page, true);
+    else {
+      docBase = "";
+      page = "/intro";
+    }
+
+    let docPath = base + docBase + page + '.html';
+
+    $.get(docPath, function(result) { content.html(result); });
+  }
+  loadContent();
 
 }(this.jQuery));
 
@@ -286,4 +390,71 @@ function cleanParamFromURL() {
   // Make sure there are not param after url.
   if (splitUrl.length == 2)
     document.location = url;
+}
+
+/** Return base of the url/path. */
+function basePath(path) { return path.replace(/\/[^\/]+\/?$/, ''); }
+
+/**
+ * Apply conversion rules.
+ * @param { string } rawStr : Unrefined string that have not apply conversion rules.
+ * @param { boolean } revert : Convert back.
+ */
+function applyConversionRule(rawStr, revert = false) {
+  if (revert) {
+    rawStr = rawStr.split(slashKey).join("/");
+    rawStr = rawStr.split(spaceKey).join(" ");
+
+    rawStr = rawStr.split(obKey).join("(");
+    rawStr = rawStr.split(cbKey).join(")");
+    rawStr = rawStr.split(ocbKey).join("{");
+    rawStr = rawStr.split(ccbKey).join("}");
+    rawStr = rawStr.split(osbKey).join("[");
+    rawStr = rawStr.split(csbKey).join("]");
+
+    rawStr = rawStr.split(atKey).join("@");
+    rawStr = rawStr.split(bqKey).join("`");
+    rawStr = rawStr.split(caretKey).join("^");
+    rawStr = rawStr.split(tildeKey).join("~");
+    rawStr = rawStr.split(hashKey).join("#");
+    rawStr = rawStr.split(dollarKey).join("$");
+    rawStr = rawStr.split(percentKey).join("%");
+    rawStr = rawStr.split(andKey).join("&");
+    rawStr = rawStr.split(plusKey).join("+");
+    rawStr = rawStr.split(quoteKey).join("'");
+    rawStr = rawStr.split(exclaimKey).join("!");
+
+    rawStr = rawStr.split(periodKey).join(".");
+    rawStr = rawStr.split(equalKey).join("=");
+    rawStr = rawStr.split(commaKey).join(",");
+    rawStr = rawStr.split(semicolonKey).join(";");
+  } else {
+    rawStr = rawStr.replace(/\//g, slashKey);
+    rawStr = rawStr.replace(/ /g, spaceKey);
+
+    rawStr = rawStr.replace(/\(/g, obKey);
+    rawStr = rawStr.replace(/\)/g, cbKey);
+    rawStr = rawStr.replace(/\{/g, ocbKey);
+    rawStr = rawStr.replace(/\}/g, ccbKey);
+    rawStr = rawStr.replace(/\[/g, osbKey);
+    rawStr = rawStr.replace(/\]/g, csbKey);
+
+    rawStr = rawStr.replace(/\@/g, atKey);
+    rawStr = rawStr.replace(/\`/g, bqKey);
+    rawStr = rawStr.replace(/\^/g, caretKey);
+    rawStr = rawStr.replace(/\~/g, tildeKey);
+    rawStr = rawStr.replace(/\#/g, hashKey);
+    rawStr = rawStr.replace(/\$/g, dollarKey);
+    rawStr = rawStr.replace(/\%/g, percentKey);
+    rawStr = rawStr.replace(/\&/g, andKey);
+    rawStr = rawStr.replace(/\+/g, plusKey);
+    rawStr = rawStr.replace(/\'/g, quoteKey);
+    rawStr = rawStr.replace(/\!/g, exclaimKey);
+
+    rawStr = rawStr.replace(/\./g, periodKey);
+    rawStr = rawStr.replace(/\=/g, equalKey);
+    rawStr = rawStr.replace(/\,/g, commaKey);
+    rawStr = rawStr.replace(/\;/g, semicolonKey);
+  }
+  return rawStr;
 }
