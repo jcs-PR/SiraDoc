@@ -8,6 +8,11 @@ Static documentation generator for scripting manual
   <img src="./etc/demo.png"/>
 </p>
 
+## TODO
+
+- [ ] Add search capability
+- [ ] Add test for CI
+
 ## License
 
 This software uses other open-source components. For a full list, see the `LICENSE` file.
