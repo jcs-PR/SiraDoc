@@ -295,11 +295,12 @@
 
   function loadContent() {
     let url = window.location.href;
-    let type = basePath(window.location.pathname);
-    let base = '..' + type;
+    let loc = window.location.pathname;
+    let base = basePath(loc);
+    let type = filename(loc);
     let docBase = '';
 
-    if (type === '/Manual') {
+    if (type === 'Manual') {
       document.title = manual_name + ' - Scripting Manual';
       scrollBarTitle.text(manual_name + " Manul");
       searchInput.attr('placeholder', si_manual_placeholder);
@@ -367,3 +368,8 @@ function cleanParamFromURL() {
 
 /** Return base of the url/path. */
 function basePath(path) { return path.replace(/\/[^\/]+\/?$/, ''); }
+
+function filename(path) {
+  let lst = path.split('/');
+  return lst[lst.length - 2];
+}
